@@ -27,4 +27,4 @@ export function finishLesson(s, lessonId, xp) {
     xpByDay: { ...s.xpByDay, [t]: (s.xpByDay[t] || 0) + xp } }
 }
 export const resetAll = () => { localStorage.removeItem(KEY); return fresh() }
-export const norm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[.,!?¿¡"]/g, '').replace(/\s+/g, ' ').trim()
+export { norm } from './words.js'
